@@ -11,37 +11,22 @@ class Solution {
     //     }
     //    }
 
-    // int left = 0;
-    // int right = 1;
+    int left = 0;
+    int right = 1;
 
-    // while(right < nums.length){
-    //     if(nums[left] == 0){
-    //         int temp = nums[left];
-    //         nums[left] = nums[right];
-    //         nums[right] = temp;
-    //      }
-    //      if(nums[left] == 0){
-    //       right++;
-    //      }else {
-    //         left++;
-    //         right++;
-    //      }            
-    // }
-    List<Integer> list = new ArrayList<>();
-    int count = 0;
-    for(int i = 0 ; i < nums.length ; i++){   
-        if(nums[i] != 0){
-            list.add(nums[i]);
-        } else {
-            count++;
-        }
+    while(right < nums.length){
+        if(nums[left] == 0){
+            int temp = nums[left];
+            nums[left] = nums[right];
+            nums[right] = temp;
+         }
+         if(nums[left] == 0){
+          right++;
+         }else {
+            left++;
+            right++;
+         }            
     }
-    while(count > 0){
-        list.add(0);
-        count--;
-    }
-    for(int i = 0 ; i < list.size() ; i++){
-        nums[i] = list.get(i);
-    }
+  
     }
 }
