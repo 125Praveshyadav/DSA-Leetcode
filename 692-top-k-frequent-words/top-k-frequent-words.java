@@ -5,7 +5,7 @@ class Solution {
             map.put(words[i] , map.getOrDefault(words[i] , 0) + 1);
         }
         Arrays.sort(words , (a ,b ) -> {
-           if( map.get(a) !=  map.get(b)) {
+           if(!map.get(a).equals(map.get(b))) {
               return map.get(b) - map.get(a);// high to low
            }
            return a.compareTo(b);
